@@ -1,0 +1,382 @@
+
+// Google Web open fonts
+@import url('http://fonts.googleapis.com/css?family=Oswald|Open+Sans:400,700');
+@import url('http://fonts.googleapis.com/css?family=Shadows+Into+Light');
+@import "buttons.css";
+
+// Color scheme variables
+@base-pink: #f6549c;
+@base-pink-dark: #ec3d91;
+@base-blue: #119af3;
+@base-gray: #f2f2f0;
+@fore-light: #828282;
+@base-gray-dark: #d6d6d6;
+@base-purple:  #342D63;
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.btn-transparent {
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 0px;
+  font-weight: 700;
+
+  &:hover {
+    background-color: white;
+    color: #111;
+    border: 2px solid white;
+  }
+}
+
+.add-item {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -moz-user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  .btn-transparent;
+}
+
+// Useful variables
+.bordered {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;  
+}
+
+.page-header {
+  .bordered;
+  
+  h1 {
+    font-family: Oswald, sans-serif;    
+  }
+}
+
+
+// item box panel styles
+.item-box {
+  width: 300px;
+  margin: auto;
+  font-family: 'Open Sans', sans-serif;
+  border: 0;
+}
+
+.item-padding {
+  padding: 10px;
+  background-color: @base-gray;  
+}
+
+.item-title {  
+  .item-padding;
+  padding-bottom: 0px;
+  font-size: 2em;
+  line-height: 1em;
+}
+
+.item-description {  
+  .item-padding;
+  padding-top: 0px;
+  color: @fore-light;
+  font-size: 1em;
+  line-height: 1.2em;
+  min-height: 250px;
+}
+
+.item-owner {
+  .item-padding;
+  background-color: #d6d6d6;
+
+  small {
+    color: @fore-light;
+  }
+
+
+  .profile-picture {
+    float:left;
+  }    
+}
+
+#owner-name {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 1.5em;
+}
+
+
+.item-bottom {
+  background: @base-pink;
+  background: -moz-linear-gradient(top, @base-pink 0%, @base-pink-dark 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, @base-pink), color-stop(100%, @base-pink-dark));
+  background: -webkit-linear-gradient(top, @base-pink 0%, @base-pink-dark 100%);
+  background: -o-linear-gradient(top, @base-pink 0%, @base-pink-dark 100%);
+  background: -ms-linear-gradient(top, @base-pink 0%, @base-pink-dark 100%);
+  background: linear-gradient(to bottom, @base-pink 0%, @base-pink-dark 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@base-pink', endColorstr='@base-pink-dark', GradientType=1 );
+
+  
+  color: white;
+  .item-padding;
+  padding-bottom: 0;
+}
+
+.price {  
+  display: inline-block;
+  line-height: 2em;
+  font-size: 1.5em;
+  #amount {
+    font-size: 1.5em;
+  }
+
+  #currency {
+    margin: 0;
+    margin-right: -5px;
+  }
+
+  sup {
+    margin: 0;
+    margin-left: -5px;
+  }
+}
+
+.basket-button {
+  display: inline-block;
+  float: right;
+}
+
+
+.navbar-static-top {
+  margin-bottom: 0px;
+  background-color: @base-purple;
+  border-color: lighten(@base-purple, 50%);
+  color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+
+  &:hover {
+    color: @base-blue;
+  }
+
+  &:focus {
+    color: white;
+  }
+}
+
+.login-link-text {
+  color: white;
+
+  &:hover {
+    color: @base-blue;
+  }
+}
+
+.view-basket-button {
+  background-color: lighten(@base-purple, 25%);
+  &:hover {
+    background-color: lighten(@base-purple, 10%);
+  }
+}
+
+.basket-row {
+  display: none;
+  background: whitesmoke;
+  margin-bottom: 10px;
+  box-shadow: 0px 1px 3px 0px #929292 inset;
+
+
+  h1 {
+    color: @base-purple;
+  }
+  
+}
+
+.basket-total {
+  margin: 10px;
+}
+
+#pay-now {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33333;
+  border-radius: 6px;
+  position: relative;
+  float: left;
+  display: inline-block;
+  margin-bottom: 0px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -moz-user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+
+
+  color: #FFF;
+  background-color: #5BC0DE;
+  border-color: #46B8DA;
+}
+
+.btn-group {
+  #pay-now {
+    
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+}
+
+.basket-item-display {
+  
+}
+
+.basket-item-carousel {  
+  height: 200px;
+  width: auto;  
+  border: 0px black solid;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+  margin-bottom: 10px;
+}
+
+.basket-item {
+  display: inline-block;  
+  height: 200px;      
+  margin: 0px 10px;  
+  padding: 10px;
+
+}
+
+
+.price-panel-footer {  
+  background-color: @base-purple;
+  color: white;
+  
+  #amount {
+    font-size: 1em;
+  }
+
+  #currency {
+    margin: 0;
+    
+  }
+  sup {
+    margin: 0;
+
+  }
+}
+
+
+.item-categories {
+  font-size: 1.2em;
+  .item-padding;
+  .label {
+    display: inline-block;  
+  }
+}
+
+.category-show-link {
+  font-size: 42px;
+  line-height: 0.75em;
+  letter-spacing: 1px;
+  font-family: 'Oswald', 'Open Sans', sans-serif;
+  padding: 25px 5px;
+  min-height: 160px;
+  
+  small {
+    font-size: 0.5em;
+    color: @fore-light;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+    text-decoration: underline;
+  }
+}
+
+.category-pink {
+  // background-color: #ff379c;
+  // color: white;               
+}
+
+.category-blue {
+  // background-color: #008af3;
+  // color: white;
+}
+
+.featured-jumbo {
+  color: white;
+  background-size: cover;
+  min-height: 400px;
+}
+
+.nav-cells {
+  li { 
+    border-right: 1px dotted white;
+  }
+
+  &:first-child {
+    border-left: 1px dotted white;
+  }
+}
+
+.main-nav-cell {
+  background-color: darken(@base-purple, 10%);
+  
+  
+  &:hover {
+    background-color: lighten(@base-purple, 10%);
+  }
+
+}
+
+// Table
+.table {
+  background-color: #34495E;
+  color: white;
+}
+
+.table > thead > tr > td {
+  background-color: rgb(18, 36, 47);
+  color: seashell;
+}
+
+.table > thead > tr > th {
+  border-bottom: 2px solid #455D75;
+}
+
+.table > tbody > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #455D75;
+}
+
+.tbody > tfoot > tr > td {
+  .item-bottom;
+}
+
+tfoot > .item-owner {
+  color: #111;
+}
+
+.table-categories {
+  font-size: 1.5em;
+
+  .label {
+    display: inline-block;
+  }
+}

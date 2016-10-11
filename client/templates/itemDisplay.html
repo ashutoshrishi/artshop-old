@@ -1,0 +1,130 @@
+<template name="itemDisplay">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="page-header">
+          <h1>
+            {{title}}
+          </h1>
+        </div>
+      </div>      
+    </div>
+
+    <!-- information row -->
+    <!-- column 1 -->
+
+    <div class="col-md-6">
+
+      <a class="thumbnail" href="">
+        <img alt="" src="{{getImage.url}}"/>
+      </a>
+
+      <a class="thumbnail" href="">
+        <img alt="" src="{{getImage.url}}"/>
+      </a>       
+    </div>
+
+    <!-- column 2 -->
+    <div class="col-md-6">
+      <!-- Information table -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th>
+              Item Information
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>
+              <strong>
+                Description
+              </strong>
+              <br/>
+              {{description}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>
+                Categories
+              </strong>
+              <br/>
+              <div class="table-categories">
+              {{#each labelClass categories}}
+              <label class="label {{this.labelClass}}">
+                {{this.name}}
+              </label>
+              {{/each}}
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>
+                Canvas Width
+              </strong>
+              <br/>
+              {{canvas.width}} inches
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Canvas Height</strong>              
+              <br/>
+              {{canvas.height}} inches
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>
+              <strong>
+                Frame Options
+              </strong>
+              <br/>
+              {{frameOptions}}
+            </td>
+          </tr>
+        </tbody>
+
+
+        <tfoot>
+          <tr class="item-owner">
+            <td>
+              <small>
+                Made By
+              </small><br/>
+              <span id="owner-name">
+                {{artist}}
+              </span>            
+            </td>
+          </tr>
+          
+          <tr class="item-bottom">
+            <td>
+            <div class="price">
+              <span id="currency">Rs.</span>
+              <span id="amount">{{price}}</span>
+              <sup>00</sup>
+            </div>
+            </td>
+          </tr>
+        </tfoot>
+        
+      </table>
+      
+    </div>
+    
+    
+  </div>
+
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  
+  
+</template>

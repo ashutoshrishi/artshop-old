@@ -1,0 +1,67 @@
+<template name="adminAddItemForm">
+
+  {{#autoForm collection="Items" id="adminAddItemForm" type="insert"}}
+
+  <fieldset>
+    <legend>
+      Add a new Item to sell
+    </legend>
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Column 1 -->
+        <div class="col-md-6">
+
+          {{> afQuickField name='title'}}
+          {{> afQuickField name='description'}}
+          {{> afQuickField name='artist'}}
+
+          <div class="form-group">
+            <label for="">Price</label>
+            <div class="input-group">
+              
+              <span class="input-group-addon">₹</span>
+              {{> afFieldInput name='price' placehold='Price'}}          
+              <span class="input-group-addon">.00</span>
+            </div>
+
+          </div>
+
+          {{> afQuickField name='featuredImage'}}
+          
+          
+        </div><!-- /column1 -->
+
+        <!-- Column 2 -->
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Item Information</h3>
+            </div>
+            <div class="panel-body">
+              {{> afQuickField name='canvas.width'}}
+              {{> afQuickField name='canvas.height'}}
+              {{> afQuickField name='frameOptions'}}
+              {{> afQuickField name='categories'}}
+
+            </div>
+          </div>
+
+        </div><!-- /column2 -->
+        
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </div>
+  </div>
+
+  {{/autoForm}}
+
+</template>

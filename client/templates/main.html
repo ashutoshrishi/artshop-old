@@ -1,0 +1,137 @@
+<template name="main">  
+
+  {{#with latestItem}}
+  <div class="jumbotron featured-jumbo"
+       style="background-image:url('{{getImage this.featuredImage}}')">
+    <div class="container">
+
+      <div class="featured-display-box">
+        <h1>{{title}}.</h1>
+        <h4>
+          <small>Made by</small>
+          <p id="owner-name">{{artist}}</p>
+        </h4>
+        <p>
+          <a href="/item/{{_id}}"
+             class="button button-royal button-rounded button-giant">
+            Learn More
+          </a>
+        </p>
+      </div>
+      
+    </div>
+  </div>
+  {{/with}}
+  
+  <!-- Latest Paintings -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">        
+        <div class="page-header">
+          <h1>LATEST PAINTINGS BY OUR ARTISTS <small>MADE WITH PASSION</small></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item display boxes row -->
+  <div class="container">
+    <div class="row">      
+      
+      {{#each latestItems}}
+      <div class="col-md-4 item-container">
+        {{> itemBox}}
+      </div>      
+      {{/each}}      
+
+    </div>
+    
+  </div>    
+
+  <br/>
+  <br/>
+  <hr/>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        
+      </div>
+
+      <div class="col-md-4">
+        <button class="button button-primary button-box button-giant button-longshadow-right">
+          <i class="fa fa-twitter"></i>
+        </button>
+        
+        <button class="button button-caution button-box button-raised button-giant button-longshadow">
+          <i class="fa fa-google-plus"></i>
+        </button>
+        
+        <button class="button button-action button-box button-giant button-longshadow-left">
+          <i class="fa fa-share-alt"></i>
+        </button>
+        
+        <button class="button button-highlight button-box button-giant button-longshadow-right button-longshadow-expand">
+          <i class="fa fa-rss"></i>
+        </button>
+      </div>
+    </div>   
+  </div>
+
+  <br/>
+  <br/>
+  <br/>
+
+</template>
+
+
+<template name="itemBox">
+  <div class="thumbnail item-box">          
+    <img alt="" src="{{getImage.url}}"/>                    
+    
+    <div class="caption item-title">
+      <a href="/item/{{_id}}">
+        {{title}}
+      </a>
+      
+    </div>
+
+    <div class="item-categories">
+      {{#each labelClass categories}}
+      <label class="label {{this.labelClass}}">
+        {{this.name}}
+      </label>
+      {{/each}}
+    </div>
+    
+    <div class="item-description">
+      {{description}}
+      <br>      
+    </div>
+
+    <div class="item-owner">
+      <small>
+        Made By
+      </small><br/>
+      <span id="owner-name">
+        {{artist}}
+      </span>            
+    </div>
+
+    
+    <div class="item-bottom">
+
+      <div class="price">
+        <span id="currency">$</span>
+        <span id="amount">{{price}}</span>
+        <sup>00</sup>
+      </div>
+
+      <div class="basket-button">
+        {{>CartAddItemButton}}        
+      </div>
+    </div>
+    
+  </div>
+  
+</template>

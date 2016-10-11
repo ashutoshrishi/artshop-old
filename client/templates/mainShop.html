@@ -1,0 +1,100 @@
+<template name="mainShop">
+  <nav class="navbar navbar-default navbar-static-top">
+    
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav nav-cells">
+          <li class="main-nav-cell">
+            <a href="">
+              <i class="fa fa-tag"></i>
+              Digital Paintings
+            </a>
+          </li>
+          <li class="main-nav-cell">
+            <a href="">
+              <i class="fa fa-tag"></i>
+              Hand Drawn Paintings 
+            </a>
+          </li>          
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+
+          {{#if isAdmin}}
+          <li class="view-basket-button">
+            <a href="/admin">Admin</a>
+          </li>
+          {{/if}}
+          <li class="view-basket-button">
+            <a>{{> loginButtons align="right"}}</a>
+          </li>
+
+          
+          <li class="view-basket-button">
+            <a href="">
+              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+              View Basket : {{itemCount}}
+            </a>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+
+  <div class="basket-row" id="basket-row">
+
+    <div class="container">
+      {{> ASCartSummary}}
+      <hr/>
+      {{> ASCartItems}}
+      
+    </div>
+
+  </div>
+  
+  
+  <!-- Title row -->
+  <div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <a href="{{pathFor route='main'}}">
+          <img alt="" src="/imgs/art-shop-logo.png"/>
+        </a>
+      </div>
+      <div class="col-md-3">
+
+      </div>
+      <div class="col-md-3">
+
+      </div>
+    </div>    
+  </div>
+
+  </div>
+  
+  <!-- /End Title Row -->
+  {{>yield}}    
+</template>
+
+<template name="searchBox">
+  <form class="navbar-form" role="search">
+    <div class="input-group search-input">
+      {{> esInput index="items" placeholder="Search..." class="form-control"}}
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Search</button>
+      </span>
+    </div><!-- /input-group -->
+  </form>
+</template>

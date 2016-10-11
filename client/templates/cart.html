@@ -1,0 +1,74 @@
+
+<template name="ASCartSummary">
+
+  <div class="row">
+    <div class="col-md-6">
+      <h2>
+        You have {{itemCount}} items
+      </h2>    
+    </div>
+    
+    <div class="col-md-6">
+      <div class="basket-total">
+        
+        <div class="btn-group btn-group-lg" role="group" aria-label="...">
+          
+          <button class="btn btn-default" disabled="disabled">
+            Total Rs. <strong>{{itemTotal}}</strong>
+          </button>
+          
+          {{#if itemsInCart}}
+          {{>CartPayNow}}
+          {{/if}}
+          
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+</template>
+
+<template name="ASCartItems">
+  {{#if hasItems}}
+
+  <div class="row">
+    <div class="col-md-12 basket-item-display">
+      <div class="basket-item-carousel">
+        {{#each items}}        
+        {{> ASCartItem}}       
+        {{/each}}      
+      </div>      
+    </div>
+  </div>
+  {{/if}}      
+
+</template>
+
+<template name="ASCartItem">
+  <div class="basket-item">
+    
+    <div class="panel panel-default">
+      <div class="panel-body">
+        {{title}}
+      </div>
+      <div class="panel-footer price-panel-footer">
+        <span class="glyphicon glyphicon-check"></span>
+        
+        <div class="price">
+          <span id="currency">Rs.</span>
+          <span id="amount">{{price}}</span>
+          <sup>00</sup>
+        </div>
+      </div>
+      
+      <div class="panel-footer">
+        <span class="glyphicon glyphicon-remove-sign"></span>
+        <a href="#" class="remove">Remove</a>
+      </div>
+    </div>
+    
+  </div>
+</template>
+
